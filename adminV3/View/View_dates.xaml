@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="adminV3.View.View_dates"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:adminV3.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="900">
+    <Grid Background="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1.3*"/>
+            <RowDefinition Height="0.9*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2">Dates importantes</TextBlock>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Date :</TextBlock>
+            <DatePicker Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Name="DP_Dates"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">information sur cette date :</TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="60" Name="TB_Dates"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">rentrer le type de date</TextBlock>
+
+            <Button Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Ajouter" Name="BT_ajouter" Width="70" Height="30" FontSize="20" Click="BT_ajouter_Click"/>
+            <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="effacer les valeurs" Name="BT_effacer" Width="130" Height="30" FontSize="16" Click="BT_effacer_Click"/>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <CheckBox Content="DS" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Name="CB_DS" Checked="CB_DS_Checked"/>
+                <CheckBox Content="reunion" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Name="CB_reunion" Checked="CB_reunion_Checked"/>
+                <CheckBox Content="Event" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Name="CB_Event" Checked="CB_Event_Checked"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="supprimer" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top" FontWeight="DemiBold"/>
+
+            <TextBlock Grid.Row="1" Text="saisir l'id de la date à supprimer " HorizontalAlignment="Center" FontSize="14" VerticalAlignment="Center"/>
+
+            <TextBox Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Name="TB_id" />
+
+            <Button Grid.Row="3" Content="supprimer" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" FontSize="20" Name="BT_supprimer" Click="BT_supprimer_Click"/>
+        </Grid>
+
+        <DataGrid Grid.Row="2" Grid.ColumnSpan="2" Name="DG_dates"/>
+    </Grid>
+</UserControl>
